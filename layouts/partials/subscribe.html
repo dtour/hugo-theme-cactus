@@ -1,0 +1,13 @@
+{{/* Optional subscribe block: controlled by .Site.Params.showSubscribe */}}
+<p class="subscribe-inline" style="margin: 1rem 0 0.5rem 0;">
+  Subscribe to my writing on
+  {{- with .Site.Params.substackUrl -}}
+    &nbsp;<a class="substack-button" href="{{ . }}" target="_blank" rel="noopener" aria-label="Substack"
+      style="display:inline-block; padding: 0.35rem 0.65rem; border: 1px solid currentColor; border-radius: 6px; text-decoration: none; line-height: 1;">Substack</a>&nbsp;or
+  {{- end -}}
+  <a class="icon" href="{{ "rss.xml" | absURL }}" aria-label="RSS" style="margin: 0 0.35rem;">
+    <i class="fas fa-rss" aria-hidden="true"></i>
+  </a>
+</p>
+
+
