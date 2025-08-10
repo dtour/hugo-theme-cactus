@@ -5,9 +5,11 @@
     &nbsp;<a class="substack-button" href="{{ . }}" target="_blank" rel="noopener" aria-label="Substack"
       style="display:inline-block; padding: 0.35rem 0.65rem; border: 1px solid currentColor; border-radius: 6px; text-decoration: none; line-height: 1;">Substack</a>&nbsp;or
   {{- end -}}
-  <a class="icon" href="{{ "rss.xml" | absURL }}" aria-label="RSS" style="margin: 0 0.35rem;">
+  {{- with site.Home.OutputFormats.Get "RSS" -}}
+  <a class="icon" href="{{ .Permalink }}" aria-label="RSS" style="margin: 0 0.35rem;">
     <i class="fas fa-rss" aria-hidden="true"></i>
   </a>
+  {{- end -}}
 </p>
 
 
