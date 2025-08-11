@@ -13,8 +13,9 @@
         </h1>
 
         <div class="meta">
-          {{- if (or .Site.Author .Site.Title) -}}
-          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          {{ $showAuthor := .Site.Params.showAuthor | default false }}
+          {{ if (and $showAuthor (or .Site.Author .Site.Title))}}
+          <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span itemprop="name">
               {{- if .Site.Author -}}
               {{ .Site.Author }}
@@ -22,7 +23,7 @@
               {{ .Site.Title }}
               {{- end -}}
             </span>
-          </span>
+          </div>
           {{- end -}}
 
           <div class="postdate">
