@@ -1,5 +1,5 @@
 @import "variables";
-@import "colors/{{ site.Params.colortheme | default "white" }}";
+@import "colors/themes";
 @import "util";
 @import "mixins";
 @import "extend";
@@ -168,8 +168,8 @@ pre {
     font-weight: 800;
     font-size: 0.9em;
     line-height: 1.7;
-    color: #fff;
-    background-color: #8c8c8c;
+    color: var(--color-background);
+    background-color: var(--color-accent-3);
     min-width: 60px;
     text-align: center;
     cursor: pointer;
@@ -177,8 +177,8 @@ pre {
   }
 
   .code-copy-btn:hover {
-    background-color: #666;
-    color: #2bbc8a;
+    background-color: var(--color-border);
+    color: var(--color-accent-1);
   }
 
   code {

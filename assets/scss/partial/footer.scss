@@ -38,7 +38,7 @@
     background-image: none;
   }
   a:hover {
-    color: lighten($color-meta, 20%);
+    color: $color-meta-hover;
   }
   .footer-left {
     height: 20px;

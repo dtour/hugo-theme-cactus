@@ -64,6 +64,25 @@
       .icon {
         display: none;
       }
+      li.theme-toggle {
+        border-right: 0;
+        margin-right: 0;
+
+        button {
+          background: none;
+          border: none;
+          color: inherit;
+          cursor: pointer;
+          font-size: inherit;
+          padding: 0;
+          line-height: inherit;
+        }
+        button:focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+          border-radius: 2px;
+        }
+      }
       li:last-child {
         margin-right: 0;
         border-right: 0;
@@ -107,6 +126,12 @@
         top: 77px;
         right: 1rem;
         display: inline-block;
+      }
+      li.theme-toggle {
+        display: inline-block;
+        position: absolute;
+        top: 77px;
+        right: 3.5rem;
       }
     }
     ul.responsive {
