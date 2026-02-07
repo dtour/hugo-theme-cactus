@@ -18,21 +18,21 @@
   color-scheme: dark;
 }
 
-// Light theme (warm beige)
+// Light theme (warm white)
 :root[data-theme="light"] {
-  --color-background: #e2e0de;
-  --color-footer-mobile-1: #dbd9d7;
-  --color-footer-mobile-2: #c8c5c0;
-  --color-background-code: #dbd9d7;
+  --color-background: #fafaf8;
+  --color-footer-mobile-1: #f5f5f2;
+  --color-footer-mobile-2: #e0dfdc;
+  --color-background-code: #f5f5f2;
   --color-border: #666;
   --color-meta: #666;
   --color-meta-code: #808080;
-  --color-link: rgba(43, 188, 138, 1);
+  --color-link: #229e71;
   --color-text: #363533;
   --color-accent-3: #666666;
   --color-accent-2: #111111;
-  --color-accent-1: #d44375;
-  --color-quote: #ab2251;
+  --color-accent-1: #24a078;
+  --color-quote: #1a7a57;
   --color-meta-hover: #999;
   --color-meta-dark: #333;
   color-scheme: light;
