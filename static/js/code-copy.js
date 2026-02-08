@@ -24,7 +24,6 @@
   document.querySelectorAll('pre > code')
   .forEach((codeNode) => {
     const copyBtn = createCopyButton(codeNode);
-    const preNode = codeNode.parentNode
     codeNode.parentNode.insertBefore(copyBtn, codeNode)
   })
 

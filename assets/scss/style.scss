@@ -25,7 +25,6 @@ body {
   height: 100%;
   background-color: $color-background;
   color: $color-text;
-  font-display: swap;
   font-weight: 400;
   font-size: $font-size;
   font-family: $font-family-body;
@@ -86,18 +85,6 @@ body {
   h6 a:hover {
     @include underline(6px, $color-link);
   }
-  h6 {
-    a {
-      background: none;
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-  h6 {
-    a:hover {
-      @include underline(6px, $color-link);
-    }
-  }
 }
 @media (min-width: 540px) {
   .image-wrap {
@@ -132,17 +119,13 @@ abbr {
 }
 
 @import "partial/header";
-@import "partial/post/actions_desktop";
-@import "partial/post/actions_mobile";
 @import "partial/index";
 @import "partial/article";
 @import "partial/archive";
 @import "partial/comments";
 @import "partial/footer";
 @import "partial/pagination";
-@import "partial/search";
 @import "partial/tags";
-@import "partial/tooltip";
 @import "partial/categories";
 @import "partial/toc_sidebar";
 
@@ -151,7 +134,6 @@ pre {
   padding: 15px 15px 10px 15px;
   border: 1px dotted $color-border;
   border-radius: 2px;
-  -webkit-border-radius: 2px;
   font-size: 15px;
   font-family: $font-family-mono;
   line-height: 24px;
@@ -173,7 +155,6 @@ pre {
     min-width: 60px;
     text-align: center;
     cursor: pointer;
-    letter-spacing: 0em;
   }
 
   .code-copy-btn:hover {
@@ -194,14 +175,12 @@ code {
   padding: 0 5px;
   border: 1px dotted $color-border;
   border-radius: 2px;
-  -webkit-border-radius: 2px;
 }
 
 .highlight {
 
   & > div {
     border-radius: 2px;
-    -webkit-border-radius: 2px;
   }
 
   pre {
