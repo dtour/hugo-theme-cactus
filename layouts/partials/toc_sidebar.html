@@ -1,0 +1,12 @@
+{{- if .TableOfContents -}}
+  {{- $tocContent := .TableOfContents -}}
+  {{- $headingCount := len (findRE `<li>` $tocContent) -}}
+  {{- if ge $headingCount 2 -}}
+<nav class="toc-sidebar" aria-label="Table of Contents">
+  <details open>
+    <summary>Table of Contents</summary>
+    {{ $tocContent }}
+  </details>
+</nav>
+  {{- end -}}
+{{- end -}}

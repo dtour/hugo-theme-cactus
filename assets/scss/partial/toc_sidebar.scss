@@ -1,0 +1,124 @@
+// Sidebar Table of Contents
+// Wide screens: sticky sidebar in right margin
+// Narrow screens: collapsible block above content
+
+// Offset for anchor links so headings aren't flush with viewport top
+article .content h2[id],
+article .content h3[id] {
+  scroll-margin-top: 1.6em;
+}
+
+.toc-sidebar {
+  font-size: 0.75rem;
+  line-height: 1.5;
+
+  details > summary {
+    cursor: pointer;
+    color: $color-meta;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  #TableOfContents {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    > ul > li {
+      margin-top: 0.5em;
+
+      &:first-child {
+        margin-top: 0.4em;
+      }
+    }
+
+    // Nested h3 items
+    ul ul {
+      padding-left: 0.75em;
+
+      li {
+        margin-top: 0.3em;
+      }
+    }
+
+    a {
+      color: $color-meta;
+      text-decoration: none;
+      background: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+
+    li.active > a {
+      color: $color-accent-1;
+      border-left: 2px solid $color-accent-1;
+      padding-left: 0.5em;
+    }
+  }
+}
+
+// Narrow screens: inline collapsible TOC
+@media (max-width: 1279px) {
+  .toc-sidebar {
+    margin-bottom: 1.6em;
+    padding: 0.8em 1em;
+    border: 1px dashed $color-border;
+    border-radius: 2px;
+
+    details > summary {
+      padding: 0.2em 0;
+    }
+  }
+}
+
+// Wide screens: sticky sidebar in right margin
+@media (min-width: 1280px) {
+  article.post {
+    position: relative;
+  }
+
+  .toc-sidebar {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    height: 100%;
+    margin-left: 1.5rem;
+
+    // Sticky within the article
+    details {
+      position: sticky;
+      top: 1.6em;
+      max-height: calc(100vh - 3.2em);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: $color-border transparent;
+
+      // Force open, hide toggle affordance
+      &:not([open]) {
+        // JS will keep it open, but just in case
+      }
+
+      > summary {
+        pointer-events: none;
+      }
+    }
+
+    // No border on wide screens
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
